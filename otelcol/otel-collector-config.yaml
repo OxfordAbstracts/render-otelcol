@@ -3,12 +3,6 @@ receivers:
     protocols:
       http:
 
-  filelog:
-    include_file_path: true
-    poll_interval: 500ms
-    include:
-      - /var/log/**/*example*/*.log
-
 processors:
   batch:
     send_batch_max_size: 100
