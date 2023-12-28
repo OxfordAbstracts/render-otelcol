@@ -9,7 +9,7 @@ services:
       - otelcol/**/*
     dockerfilePath: ./otelcol/Dockerfile
     dockerContext: ./otelcol
-    dockerCommand: otel-contrib --config=/etc/otelcol/config.yaml
+    dockerCommand: otelcol-contrib --config=/etc/otelcol/config.yaml
     envVars:
       - key: PORT
         value: 4318
