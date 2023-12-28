@@ -13,8 +13,4 @@ services:
     envVars:
       - key: PORT
         value: 4318
-      - key: OTEL_PROM_URL
-        fromService:
-          name: prometheus
-          type: pserv
-          property: hostport
+      - fromGroup: datadog-apm
