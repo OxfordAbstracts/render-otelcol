@@ -1,7 +1,9 @@
 receivers:
-  otlp:
+  otlp/basicauth:
     protocols:
       http:
+        auth:
+          authenticator: basicauth/server
 
 processors:
   batch:
@@ -16,8 +18,14 @@ exporters:
       key: ${env:DD_API_KEY}
 
 service:
+  extensions: [basicauth/server]
   pipelines:
     traces:
-      receivers: [otlp]
+      receivers: [otlp/basicauth]
       processors: [batch]
       exporters: [datadog]
+
+extensions:
+  basicauth/server:
+    htpasswd:
+      inline: ${env:USERNAME}:${env:PASSWORD}

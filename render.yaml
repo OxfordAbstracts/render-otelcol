@@ -12,4 +12,8 @@ services:
     envVars:
       - key: PORT
         value: 4318
+      - key: USERNAME
+        value: otel
+      - key: PASSWORD
+        generate: true
       - fromGroup: datadog-apm
