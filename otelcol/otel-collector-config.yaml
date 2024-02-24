@@ -24,6 +24,14 @@ service:
       receivers: [otlp/basicauth]
       processors: [batch]
       exporters: [datadog]
+    metrics:
+      receivers: [otlp/basicauth]
+      processors: [batch]
+      exporters: [datadog]
+    logs:
+      receivers: [otlp/basicauth]
+      processors: [batch]
+      exporters: [datadog]
 
 extensions:
   basicauth/server:
