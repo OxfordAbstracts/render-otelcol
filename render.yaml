@@ -15,5 +15,5 @@ services:
       - key: USERNAME
         value: otel
       - key: PASSWORD
-        generateValue: true
+        sync: false
       - fromGroup: datadog-apm
