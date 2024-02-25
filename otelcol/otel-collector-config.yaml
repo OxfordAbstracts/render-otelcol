@@ -4,6 +4,7 @@ receivers:
       http:
         auth:
           authenticator: basicauth/server
+        endpoint: ${env:RENDER_EXTERNAL_HOSTNAME}:${PORT}
 
 processors:
   batch:
