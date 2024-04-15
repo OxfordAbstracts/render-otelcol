@@ -18,7 +18,7 @@ exporters:
       key: ${env:DD_API_KEY}
 
 service:
-  extensions: [basicauth/server]
+  extensions: [health_check, basicauth/server]
   telemetry:
     logs:
       level: WARN
