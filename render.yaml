@@ -9,6 +9,7 @@ services:
       - otelcol/**/*
     dockerfilePath: ./otelcol/Dockerfile
     dockerContext: ./otelcol
+    healthCheckPath: /
     envVars:
       - key: PORT
         value: 4318

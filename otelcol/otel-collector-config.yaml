@@ -37,6 +37,7 @@ service:
       exporters: [datadog]
 
 extensions:
+  health_check:
   basicauth/server:
     htpasswd:
       inline: ${env:USERNAME}:${env:PASSWORD}
