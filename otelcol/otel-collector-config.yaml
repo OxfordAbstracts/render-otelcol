@@ -18,7 +18,7 @@ exporters:
       key: ${env:DD_API_KEY}
 
 service:
-  extensions: [health_check, basicauth/server]
+  extensions: [basicauth/server]
   telemetry:
     logs:
       level: WARN
@@ -37,7 +37,6 @@ service:
       exporters: [datadog]
 
 extensions:
-  health_check:
   basicauth/server:
     htpasswd:
       inline: ${env:USERNAME}:${env:PASSWORD}
