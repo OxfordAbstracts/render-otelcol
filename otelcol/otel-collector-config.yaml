@@ -19,6 +19,9 @@ exporters:
 
 service:
   extensions: [basicauth/server]
+  telemetry:
+    logs:
+      level: WARN
   pipelines:
     traces:
       receivers: [otlp/basicauth]
